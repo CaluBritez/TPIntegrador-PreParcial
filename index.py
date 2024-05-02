@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 
+#------------- FUNCIONES -------------------------------------
 def extraer_valores_columna(dataframe, nombre_columna):
     valores = dataframe[nombre_columna].tolist()
     return valores
@@ -34,6 +35,8 @@ def crear_df(diccionario):
     data_frame["Cant. Personas"] = diccionario.values()
     return data_frame
 
+#------------- DESARROLLO -------------------------------------
+
 # Leer el archivo CSV
 df = pd.read_csv("edades.csv")
 
@@ -54,12 +57,12 @@ df_ordenado = personas_mayores.sort_values(by='edad_valor')
 print(df_ordenado)
 
 
-#Extraemos las edade en una lista
+#Extraemos las edades en una lista
 lista_valores = df_ordenado['edad_valor'].tolist()
 #Creamos un diccionario de contadores de edades
 dicci = contar_valores(lista_valores)
 #Utilizamos diccionario para responder las consignas
-print(f"La cantidad de Edades existntes es de: {len(dicci)}")
+print(f"La cantidad de Edades existentes es de: {len(dicci)}")
 for clave, valor in dicci.items():
     print(f"La edad {clave} se repite {valor} veces")
 
