@@ -9,12 +9,12 @@ def extraer_valores_columna(dataframe, nombre_columna):
 def calcular_edades(lista_fechas):
     lista_fechas = pd.to_datetime(lista_fechas, format='%d/%m/%Y')
     # Convertir la fecha actual a un objeto datetime
-    fecha_actual = datetime(2024, 5, 1)
+    fecha_actual = datetime.today()
    # Calcular la diferencia entre cada fecha en la lista y la fecha actual en días
     diferencias_en_dias = [(fecha_actual - fecha).days for fecha in lista_fechas]
     
     # Convertir la diferencia en días a una estimación de la edad en años
-    edades_en_anios = [round(diferencia / 365) for diferencia in diferencias_en_dias]
+    edades_en_anios = [int(diferencia / 365) for diferencia in diferencias_en_dias]
     
     return edades_en_anios
 
@@ -75,3 +75,5 @@ plt.title("Cantidad de personas por edad")
 plt.xlabel('Edad') # definir el nombre del eje X
 plt.ylabel('Cantidad de Personas') # definir el nombre del eje Y
 plt.show()
+
+
