@@ -79,4 +79,4 @@ plt.xlabel('Edad') # definir el nombre del eje X
 plt.ylabel('Cantidad de Personas') # definir el nombre del eje Y
 plt.show()
 
-
+#ahora si
